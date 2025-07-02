@@ -2,13 +2,13 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "src/handler.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/handler",
+      "src": "/handler",
       "dest": "src/handler.js",
       "methods": ["POST"]
     }
