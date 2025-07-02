@@ -8,9 +8,9 @@
   ],
   "routes": [
     {
-      "src": "/handler",
-      "dest": "src/handler.js",
-      "methods": ["POST"]
+      "src": "/getdetails",
+      "methods": ["POST"],
+      "dest": "src/handler.js"
     }
   ]
 }
