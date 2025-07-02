@@ -1,28 +1,42 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
+
 const prisma = new PrismaClient();
 
-async function main() {
-  const user = await prisma.user.create({
-    data: {
-      name: "Alice Johnson",
-      email: "alice@example.com",
-      department: "Engineering",
-      salary: 75000,
-      entryTime: new Date("2025-07-01T09:00:00Z"),
-      position: "Software Engineer",
-      workingOn: "Internal Dashboard",
-      // exitTime is optional
-    },
-  });
+export default async function handler(req, res) {
+  if (req.method === 'POST') {
+    try {
+      const {
+        name,
+        email,
+        department,
+        salary,
+        entryTime,
+        exitTime,
+        position,
+        workingOn,
+      } = req.body;
 
-  console.log("User created:", user);
+      const user = await prisma.user.create({
+        data: {
+          name,
+          email,
+          department,
+          salary: Number(salary),
+          entryTime: new Date(entryTime),
+          exitTime: exitTime ? new Date(exitTime) : null,
+          position,
+          workingOn,
+        },
+      });
+
+      res.status(201).json(user);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Failed to create user' });
+    } finally {
+      await prisma.$disconnect();
+    }
+  } else {
+    res.status(405).json({ error: 'Method not allowed' });
+  }
 }
-
-main()
-  .catch(e => {
-    console.error(e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
