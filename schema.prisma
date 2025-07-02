@@ -8,14 +8,13 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String
+  id         Int      @id @default(autoincrement())
+  name       String
   department String
-  salary    Float
-  entryTime DateTime
-  exitTime  DateTime?
-  position  String
-  workingOn String
+  salary     Float
+  entryTime  DateTime
+  exitTime   DateTime?
+  position   String
+  workingOn  String
 }
-
 
