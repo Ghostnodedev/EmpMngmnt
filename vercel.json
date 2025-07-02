@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/api/create-user",
-      "dest": "/api/createUser.js",
+      "dest": "/api/handler.js",
       "methods": ["POST"]
     }
   ]
