@@ -2,7 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "/handler.js",
+      "src": "src/handler.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "src/admin.js",
       "use": "@vercel/node"
     }
   ],
