@@ -10,12 +10,12 @@
     {
       "src": "/getdata",
       "methods": ["POST"],
-      "dest": "/handler.js"
+      "dest": "/src/handler.js"
     },
         {
       "src": "/getempdata",
       "methods": ["GET"],
-      "dest": "/admin.js"
+      "dest": "/src/admin.js"
     }
   ]
 }
