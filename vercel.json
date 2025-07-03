@@ -11,6 +11,11 @@
       "src": "/getdata",
       "methods": ["POST"],
       "dest": "/handler.js"
+    },
+        {
+      "src": "/getempdata",
+      "methods": ["POST"],
+      "dest": "/admin.js"
     }
   ]
 }
