@@ -1,6 +1,7 @@
-// import { PrismaClient } from '@prisma/client';
-
-// const prisma = new PrismaClient();
+"use strict";
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
+// import { Prisma } from '@prisma/client';
 
 // export default async function handler(req, res) {
 //   if (req.method === 'POST') {
