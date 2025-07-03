@@ -14,7 +14,7 @@
     },
         {
       "src": "/getempdata",
-      "methods": ["POST"],
+      "methods": ["GET"],
       "dest": "/admin.js"
     }
   ]
