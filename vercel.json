@@ -8,7 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/getdetails",
+      "src": "/getdata",
       "methods": ["POST"],
       "dest": "/handler.js"
     }
