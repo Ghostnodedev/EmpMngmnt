@@ -64,11 +64,11 @@ const getdata = async(req,res)=>{
           workingOn,
         },
       });
+      console.log("User created successfully:", user);
       res.status(201).json(user);
     } else {
       res.status(405).json({ error: 'Method not allowed' });
     }
-    console.log("User created successfully:", user);
   } catch (error) {
     console.error("Error creating user:", error);
     res.status(500).json({ error: 'Failed to create user' });
