@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "windows", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
@@ -19,4 +20,3 @@ model User {
   workingOn  String?
   createdAt  DateTime @default(now())
 }
-
