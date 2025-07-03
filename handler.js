@@ -44,3 +44,4 @@ const getdata = async (req, res) => {
 };
 
 export default getdata;
+
